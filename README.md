@@ -1,2 +1,3 @@
-# vidoe-generator
-generate videos and upload to yt/tiktok 
+# Video Generator
+
+generate videos and upload to yt/tiktok
