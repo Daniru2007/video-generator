@@ -10,8 +10,8 @@ reddit = praw.Reddit(
 )
 
 
-submission = reddit.submission(
-    url="https://www.reddit.com/r/Kerala/comments/w1jr2j/nris_what_are_some_funny_questionsassumptions_you/")
+def read_reddit(url):
+    submission = reddit.submission(url=url)
 
-for comment in submission.comments:
-    print(comment.body)
+    for comment in submission.comments:
+        print(comment.body)
