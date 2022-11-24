@@ -15,10 +15,13 @@ def read_reddit(url):
     comments = {
         "url": url,
         "title": "",
-        "data": []
+        "data": [],
+        "id": ""
     }
     submission = reddit.submission(url=url)
     comments["title"] = submission.title
+    comments["id"] = f"#t3_{submission.id}"
+    comments["len"] = len(submission.title)/10
 
     for comment in submission.comments:
         content = comment.body
@@ -27,6 +30,6 @@ def read_reddit(url):
         if isinstance(comment, MoreComments):
             continue
         comments["data"].append(
-            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}"})
+            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}", "id": f"#t1_{comment.id}", "len": len(comment.body)/10})
 
     return comments
