@@ -31,6 +31,6 @@ def read_reddit(url):
         if isinstance(comment, MoreComments):
             continue
         comments["data"].append(
-            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}", "id": f"#t1_{comment.id}", "len": len(comment.body)/10.5})
+            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}", "id": f"#t1_{comment.id}", "len": len(comment.body)/14.0})
 
     return comments

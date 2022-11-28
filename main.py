@@ -10,6 +10,11 @@ def main(argv):
         "https://www.reddit.com/r/AskReddit/comments/xrxtcx/raskredit_whats_the_dumbest_rule_in_your_school/")
     out_to_mp3(content, "out.mp3")
     take_screenshots(content)
+
+    # content["path"] = "img/ss.png"
+    # for i, data in enumerate(content["data"]):
+    #     content["data"][i]["path"] = f"img/ss{i}.png"
+
     generate_vid(content)
 
 
