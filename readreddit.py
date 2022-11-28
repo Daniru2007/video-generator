@@ -12,6 +12,7 @@ reddit = praw.Reddit(
 
 
 def read_reddit(url):
+    print("reading comments")
     comments = {
         "url": url,
         "title": "",
@@ -21,7 +22,7 @@ def read_reddit(url):
     submission = reddit.submission(url=url)
     comments["title"] = submission.title
     comments["id"] = f"#t3_{submission.id}"
-    comments["len"] = len(submission.title)/10
+    comments["len"] = len(submission.title)/10.5
 
     for comment in submission.comments:
         content = comment.body
@@ -30,6 +31,6 @@ def read_reddit(url):
         if isinstance(comment, MoreComments):
             continue
         comments["data"].append(
-            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}", "id": f"#t1_{comment.id}", "len": len(comment.body)/10})
+            {"body": comment.body, "url": f"https://www.reddit.com{comment.permalink}", "id": f"#t1_{comment.id}", "len": len(comment.body)/10.5})
 
     return comments
